@@ -22,8 +22,8 @@ class YarnInstallTask
         dependsOn( [YarnSetupTask.NAME] )
 
         this.project.afterEvaluate {
-            getInputs().file( new File( (File) this.project.node.nodeModulesDir, 'package.json' ) )
-            getInputs().file( new File( (File) this.project.node.nodeModulesDir, 'yarn.lock' ) )
+            getInputs().files( new File( (File) this.project.node.nodeModulesDir, 'package.json' ) )
+            getInputs().files( new File( (File) this.project.node.nodeModulesDir, 'yarn.lock' ) )
             getOutputs().dir( new File( (File) this.project.node.nodeModulesDir, 'node_modules' ) )
         }
     }
